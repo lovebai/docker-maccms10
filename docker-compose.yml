@@ -1,7 +1,7 @@
 version: '3.3'
 services:
     maccms:
-        image: esme518/docker-maccms10
+        image: kukudebai/docker-maccms10
         container_name: maccms
         restart: always
         volumes:
