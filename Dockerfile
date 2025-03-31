@@ -24,6 +24,8 @@ RUN set -ex \
         --with-jpeg \
         --with-webp \
     && docker-php-ext-install -j$(nproc) gd \
+    && pecl install redis-5.3.7 \
+    && docker-php-ext-enable redis \
     && apt-get autoremove -y \
     && apt-get clean \
     && rm -rf /tmp/* /var/lib/apt/lists/*
@@ -41,6 +43,8 @@ RemoteIPTrustedProxy ::1/128
 EOT
 
 VOLUME /var/www/html
+
+RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 
 ENV ADMIN_PHP cmsadmin.php
 
