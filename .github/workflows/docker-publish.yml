@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: docker.io  # Docker 注册表，默认为 Docker Hub
-  IMAGE_NAME: 'kukudebai'  # Docker 镜像名称
+  IMAGE_NAME: ${{ github.repository }}  # Docker 镜像名称
 
 jobs:
   keepalive-job:
