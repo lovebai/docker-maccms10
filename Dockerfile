@@ -32,7 +32,7 @@ RUN set -ex \
 
 RUN set -ex \
     && mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
-    && a2enmod remoteip \
+    && a2enmod remoteip rewrite \
     && sed -i 's/%h/%a/g' /etc/apache2/apache2.conf \
     && echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
