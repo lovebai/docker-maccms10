@@ -4,7 +4,7 @@
 
 # syntax=docker/dockerfile:1
 
-FROM php:7.4-apache
+FROM php:8.2.35-apache
 
 COPY docker-entrypoint.sh /entrypoint.sh
 
